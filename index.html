@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+      $("#btn3").click(function(){
+        
+          //get
+          var color = $('#bgcolor').val();
+        
+          // check for hexnumber
+          //if(color == /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test('#ac3')) {
+          if(color) {
+                //set
+                $('#bgcolor').val(color);
+                
+                alert(color);
+                
+                $("body").css("background-color", "#" + color);
+              
+          } else {
+            
+                alert("That isn't a hex number");
+              
+          };
+          
+         
+
+      });
+    });
+</script>
+    
+    <style type="text/css">
+        body { 
+            background-color: #000000; 
+            text-align:center;
+            padding: 100px 0 0 0;
+        }
+        .hashtag {
+            font-size: 1.5em;
+            font-family:sans-serif;
+            color: #cdcdcd;
+        }
+    </style>
+</head>
+
+<body>
+<p><span class="hashtag">#</span> <input type="text" id="bgcolor" placeholder="Enter Hex Color"></p>
+<button id="btn3">Set Background Color</button>
+</body>
+</html>
