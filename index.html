@@ -40,13 +40,14 @@
                   var color = $("#bgcolor").val();
                   var checkHex = /^#?([A-F0-9]{6}|[A-F0-9]{3})$/i;
                   var alpahValue = $( "#slider" ).slider( "value" ); 
+                  var rgbValues = (hexToRgb("#" + color));
+                  var rgbaColor = rgbValues + ", " + alpahValue;
               
-                  console.log(alpahValue);
-                  console.log(hexToRgb("#" + color));
-                  
+                  console.log(rgbaColor);
+              
                   // check for hexnumber              
                   if(checkHex.test(color)){ 
-                            $("body").css("background-color", "#" + color);
+                            $("body").css("background-color", "rgba(" + rgbaColor +")");
                         } else {
                             alert("#" + color + " isn't a hex number");
                         }
@@ -57,15 +58,15 @@
     
     <style type="text/css">
         * {
-            font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-family: "Helvetica Neue", Helvetica,Arial, sans-serif;
         }
         #container {
             width: 80%;
-            min-width: 500px;
+            min-width: 400px;
             margin: 0 auto;
         }
         body { 
-            background-color: #000000; 
+            background-color: rgba(0, 0, 0, 1); 
             text-align:center;
             padding: 100px 0 0 0;
         }
